@@ -1,0 +1,16 @@
+= Single App Sample for Kayak demo
+
+Retrieves creek information from the USGS for 3 creeks.   It then stores this
+information into the `creek_measurement` table.  It then reports to console which
+of the creeks is in a condition that they may be kayaked.
+
+== Build the application
+```
+mvn clean package
+```
+
+== Launch App
+```
+java -jar target/streampoc-0.0.1-SNAPSHOT.jar
+```
+

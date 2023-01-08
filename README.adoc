@@ -15,6 +15,7 @@ A refactored boot app based on the POC that has been enhanced so that it is easi
 Currently this application is a work in progress with many changes to come.
 It only returns good for any sensor id that is passed into it.
 The code currently shows the following:
+
 * The test prove that the module design is consistent with good patterns
 * For every request we will use the event messaging framework to record request to a database.
 * Docs for the design of the modules is created.

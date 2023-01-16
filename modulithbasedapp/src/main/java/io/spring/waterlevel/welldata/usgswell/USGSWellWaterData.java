@@ -1,4 +1,4 @@
-package io.spring.waterlevel.welldata.internal;
+package io.spring.waterlevel.welldata.usgswell;
 
 import org.springframework.stereotype.Component;
 

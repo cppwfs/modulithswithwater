@@ -16,16 +16,4 @@ public class WaterlevelApplication {
 		SpringApplication.run(WaterlevelApplication.class, args);
 	}
 
-
-//	@Bean
-//	ApplicationRunner applicationRunner(WaterLevelService service) {
-//		return new ApplicationRunner() {
-//			@Override
-//			public void run(ApplicationArguments args) throws Exception {
-//				System.out.println("Sensor Result is: " + service.getAlertForSensor("789"));
-//				System.out.println("FINISHED ALERT REQUEST");
-//			}
-//		};
-//	}
-
 }

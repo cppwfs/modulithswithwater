@@ -11,17 +11,25 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class WaterLevelController {
 
-    @Autowired
-    private WaterLevelService service;
+    private final WaterLevelService service;
+
+    public WaterLevelController(WaterLevelService service) {
+        this.service = service;
+    }
 
     @GetMapping("/streamdata")
-    public String streamDataRequest(@RequestParam(name="sensorid", required=false, defaultValue="1234") String sensorId) {
-        return "Result for stream sensor is: " + service.getAlertForSensor(sensorId);
+    public String streamDataRequest(@RequestParam(name="sensorid", required=false, defaultValue="02335757") String sensorId) {
+        return "Result for stream sensor is: " + service.getAlertForStreamSensor(sensorId);
     }
 
     @GetMapping("/welldata")
     public String wellDataRequest(@RequestParam(name="sensorid", required=false, defaultValue="1234") String sensorId) {
-        return "Result for well sensor is: " + service.getAlertForSensor(sensorId);
+        return "Result for well sensor is: " + service.getAlertForStreamSensor(sensorId);
+    }
+
+    @GetMapping("/sendAlertsForStream")
+    public String sendAlertsForStream(@RequestParam(name="sensorid", required=false, defaultValue="1234") String sensorId) {
+        return "Result for stream sensor is: " + service.getAlertForStreamSensor(sensorId);
     }
 
 }

@@ -2,14 +2,14 @@ package io.spring.waterlevel.configuration;
 
 
 import io.spring.waterlevel.alerts.AlertStatus;
+import io.spring.waterlevel.storestreamdata.StoreStreamDataStatus;
 import io.spring.waterlevel.streamdata.StreamDataService;
 import jakarta.transaction.Transactional;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 
 /**
- * Water Level Services available for RestfulRequests./
+ * Water Level Services available for Restful or scheduled requests.
  */
 @Service
 public class WaterLevelService {
@@ -30,9 +30,21 @@ public class WaterLevelService {
      * @return
      */
     @Transactional
-    public String getAlertForStreamSensor(String sensorId) {
+    public String getStatusForStreamSensor(String sensorId) {
+        String result = streamDataService.getStatusForSensor(sensorId);
+        return result;
+    }
+
+    @Transactional
+    public String sendAlertForStream(String sensorId) {
         String result = streamDataService.getStatusForSensor(sensorId);
         events.publishEvent(new AlertStatus(sensorId, result));
         return result;
+    }
+
+    @Transactional
+    public void storeSensorInformationToDataStore(StoreStreamDataStatus status) {
+        events.publishEvent(status);
+
     }
 }

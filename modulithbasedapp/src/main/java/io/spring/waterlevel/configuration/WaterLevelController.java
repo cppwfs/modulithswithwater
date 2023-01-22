@@ -1,6 +1,5 @@
 package io.spring.waterlevel.configuration;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,17 +18,12 @@ public class WaterLevelController {
 
     @GetMapping("/streamdata")
     public String streamDataRequest(@RequestParam(name="sensorid", required=false, defaultValue="02335757") String sensorId) {
-        return "Result for stream sensor is: " + service.getAlertForStreamSensor(sensorId);
-    }
-
-    @GetMapping("/welldata")
-    public String wellDataRequest(@RequestParam(name="sensorid", required=false, defaultValue="1234") String sensorId) {
-        return "Result for well sensor is: " + service.getAlertForStreamSensor(sensorId);
+        return "Result for stream sensor(s) is: " + service.getStatusForStreamSensor(sensorId);
     }
 
     @GetMapping("/sendAlertsForStream")
     public String sendAlertsForStream(@RequestParam(name="sensorid", required=false, defaultValue="1234") String sensorId) {
-        return "Result for stream sensor is: " + service.getAlertForStreamSensor(sensorId);
+        return "Alert Sent for stream sensor(s) is: " + service.sendAlertForStream(sensorId);
     }
 
 }

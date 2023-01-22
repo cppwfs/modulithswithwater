@@ -33,21 +33,21 @@ public class StreamDataService {
     private String getStatus(List<USGSStreamData> creekMeasurements) {
         USGSStreamData controlMeasurement = null;
         USGSStreamData previousMeasurement = null;
+        String result = "";
         for (USGSStreamData measurement : creekMeasurements) {
             if (controlMeasurement == null) {
                 controlMeasurement = measurement;
                 continue;
             }
             if (!measurement.getSensorId().equals(controlMeasurement.getSensorId())) {
-                System.out.println(getSymbol(controlMeasurement, previousMeasurement) + " " +
-                        previousMeasurement.getName());
+                result += getSymbol(controlMeasurement, previousMeasurement) + " " + previousMeasurement.getName() + "\n";
 
                 controlMeasurement = measurement;
             }
             previousMeasurement = measurement;
         }
-        return getSymbol(controlMeasurement, previousMeasurement) + " " +
-                previousMeasurement.getName();
+        result += getSymbol(controlMeasurement, previousMeasurement) + " " + previousMeasurement.getName() + "\n";
+        return result;
     }
 
 

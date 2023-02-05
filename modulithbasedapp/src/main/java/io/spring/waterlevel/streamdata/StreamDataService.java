@@ -23,18 +23,18 @@ public class StreamDataService {
                     "&parameterCd=00065&startDT=" + startTime + "&endDT=" +
                     endTime + "&siteStatus=all&format=rdb", String.class);
 
-        List<USGSStreamData> creekMeasurements = transformUsgsStreamData(result);
-        result = getStatus(creekMeasurements);
+        List<USGSStreamData> streamMeasurements = transformUsgsStreamData(result);
+        result = getStatus(streamMeasurements);
         } catch(Exception exception) {
             System.out.println("Failed to retrieve data from USGS using sample date");;
         }
         return result;
     }
-    private String getStatus(List<USGSStreamData> creekMeasurements) {
+    private String getStatus(List<USGSStreamData> streamMeasurements) {
         USGSStreamData controlMeasurement = null;
         USGSStreamData previousMeasurement = null;
         String result = "";
-        for (USGSStreamData measurement : creekMeasurements) {
+        for (USGSStreamData measurement : streamMeasurements) {
             if (controlMeasurement == null) {
                 controlMeasurement = measurement;
                 continue;

@@ -1,8 +1,6 @@
 package io.spring.waterlevel.configuration;
 
 
-import io.spring.waterlevel.alerts.AlertStatus;
-import io.spring.waterlevel.storestreamdata.StoreStreamDataStatus;
 import io.spring.waterlevel.streamdata.StreamDataService;
 import jakarta.transaction.Transactional;
 import org.springframework.context.ApplicationEventPublisher;
@@ -43,7 +41,7 @@ public class WaterLevelService {
     }
 
     @Transactional
-    public void storeSensorInformationToDataStore(StoreStreamDataStatus status) {
+    public void storeSensorInformationToDataStore(StreamDataStatus status) {
         events.publishEvent(status);
 
     }

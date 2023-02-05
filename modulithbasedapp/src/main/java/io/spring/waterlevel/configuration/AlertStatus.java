@@ -1,4 +1,4 @@
-package io.spring.waterlevel.alerts;
+package io.spring.waterlevel.configuration;
 
 import org.jmolecules.event.types.DomainEvent;
 

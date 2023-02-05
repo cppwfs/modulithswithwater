@@ -8,7 +8,7 @@ import java.time.format.DateTimeFormatter;
 
 @Component
 public class USGSStreamData {
-    private String creekMeasurementKey;
+    private String streamMeasurementKey;
     private String sensorId;
 
     private String name;
@@ -24,7 +24,7 @@ public class USGSStreamData {
         this.dateCaptured = ZonedDateTime.parse(rawData[2] + " " +rawData[3], formatter);
         this.streamHeight = Float.valueOf(rawData[4]);
         this.status = rawData[5];
-        creekMeasurementKey = this.sensorId + this.dateCaptured;
+        streamMeasurementKey = this.sensorId + this.dateCaptured;
     }
 
     public USGSStreamData() {
@@ -58,15 +58,15 @@ public class USGSStreamData {
     }
 
     public String toString() {
-        return creekMeasurementKey + " " + sensorId + " " + this.dateCaptured + " " + this.streamHeight + " " + this.status;
+        return streamMeasurementKey + " " + sensorId + " " + this.dateCaptured + " " + this.streamHeight + " " + this.status;
     }
 
-    public String getCreekMeasurementKey() {
-        return creekMeasurementKey;
+    public String getStreamMeasurementKey() {
+        return streamMeasurementKey;
     }
 
-    public void setCreekMeasurementKey(String creekMeasurementKey) {
-        this.creekMeasurementKey = creekMeasurementKey;
+    public void setStreamMeasurementKey(String streamMeasurementKey) {
+        this.streamMeasurementKey = streamMeasurementKey;
     }
 
     public String getName() {

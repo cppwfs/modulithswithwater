@@ -1,13 +1,13 @@
-package io.spring.waterlevel.storestreamdata;
+package io.spring.waterlevel.configuration;
 
 import org.jmolecules.event.types.DomainEvent;
 
-public class StoreStreamDataStatus implements DomainEvent {
+public class StreamDataStatus implements DomainEvent {
     String sensorId;
 
     String alertResult;
 
-    public StoreStreamDataStatus(String sensorId, String alertResult) {
+    public StreamDataStatus(String sensorId, String alertResult) {
         this.sensorId = sensorId;
         this.alertResult = alertResult;
 

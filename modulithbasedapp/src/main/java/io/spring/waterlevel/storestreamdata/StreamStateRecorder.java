@@ -1,5 +1,6 @@
 package io.spring.waterlevel.storestreamdata;
 
+import io.spring.waterlevel.configuration.StreamDataStatus;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.modulith.ApplicationModuleListener;
@@ -11,7 +12,7 @@ public class StreamStateRecorder {
     private static final Log log = LogFactory.getLog(StreamStateRecorder.class);
 
     @ApplicationModuleListener
-    void on(StoreStreamDataStatus event) throws InterruptedException {
+    void on(StreamDataStatus event) throws InterruptedException {
 
         var sensorId = event.getSensorId();
 

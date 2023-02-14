@@ -1,6 +1,6 @@
 package io.spring.waterlevel.storestreamdata;
 
-import io.spring.waterlevel.configuration.StreamDataStatus;
+import io.spring.waterlevel.notifier.StreamDataStatus;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.modulith.ApplicationModuleListener;

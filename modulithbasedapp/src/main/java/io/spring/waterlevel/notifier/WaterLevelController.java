@@ -1,4 +1,4 @@
-package io.spring.waterlevel.configuration;
+package io.spring.waterlevel.notifier;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;

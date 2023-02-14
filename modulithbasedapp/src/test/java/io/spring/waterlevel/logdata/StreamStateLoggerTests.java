@@ -1,6 +1,6 @@
 package io.spring.waterlevel.logdata;
 
-import io.spring.waterlevel.configuration.StreamDataStatus;
+import io.spring.waterlevel.notifier.StreamDataStatus;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -16,6 +16,12 @@ public class DocumenterTests {
     }
 
     @Test
+    void createModuleCanvas() {
+        new Documenter(modules)
+                .writeModuleCanvases();
+    }
+
+    @Test
     void writeDocumentationSnippets() {
         new Documenter(modules)
                 .writeModulesAsPlantUml()

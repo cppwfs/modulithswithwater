@@ -2,9 +2,9 @@ package io.spring.waterlevel.notifier;
 
 
 import io.spring.waterlevel.streamdata.StreamDataService;
-import jakarta.transaction.Transactional;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * Water Level Services available for Restful or scheduled requests.

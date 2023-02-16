@@ -23,6 +23,6 @@ class StreamDataIntegrationTests {
     @Test
     public void sampleIntegrationTest() {
         assertThat(streamDataService.getStatusForSensor("123")).isEqualTo("Error Obtaining results for 123");
-        assertThat(streamDataService.getStatusForSensor("02335757")).contains("BIG CREEK BELOW HOG WALLOW CREEK AT ROSWELL, GA");
+        assertThat(streamDataService.getStatusForSensor("02311500")).contains("WITHLACOOCHEE RIVER NEAR DADE CITY, FL");
     }
 }

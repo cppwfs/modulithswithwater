@@ -8,7 +8,7 @@ class ModularityTests {
 
 
 	@Test
-	void contextLoads() {
+	void printCurrentModules() {
 		modules.forEach(System.out::println);
 	}
 

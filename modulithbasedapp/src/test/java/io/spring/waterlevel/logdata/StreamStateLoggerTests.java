@@ -10,8 +10,8 @@ import org.springframework.modulith.test.ApplicationModuleTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ApplicationModuleTest
 @ExtendWith(OutputCaptureExtension.class)
+@ApplicationModuleTest
 public class StreamStateLoggerTests {
 
     private  static final String DEFAULT_STATUS = "SOME SENSOR SOME WHERE";

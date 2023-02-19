@@ -1,4 +1,4 @@
-package io.spring.waterlevel.notifier;
+package io.spring.waterlevel.wateradvisor;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

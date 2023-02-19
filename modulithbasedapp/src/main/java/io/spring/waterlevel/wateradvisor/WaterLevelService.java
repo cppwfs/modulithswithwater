@@ -1,4 +1,4 @@
-package io.spring.waterlevel.notifier;
+package io.spring.waterlevel.wateradvisor;
 
 
 import io.spring.waterlevel.streamdata.StreamDataService;

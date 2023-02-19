@@ -1,7 +1,7 @@
 package io.spring.waterlevel.alerts;
 
 
-import io.spring.waterlevel.notifier.AlertStatus;
+import io.spring.waterlevel.wateradvisor.AlertStatus;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

@@ -5,11 +5,11 @@ import org.jmolecules.event.types.DomainEvent;
 public class StreamDataStatus implements DomainEvent {
     String sensorId;
 
-    String alertResult;
+    String status;
 
-    public StreamDataStatus(String sensorId, String alertResult) {
+    public StreamDataStatus(String sensorId, String status) {
         this.sensorId = sensorId;
-        this.alertResult = alertResult;
+        this.status = status;
 
     }
 
@@ -21,7 +21,7 @@ public class StreamDataStatus implements DomainEvent {
         this.sensorId = sensorId;
     }
 
-    public String getAlertResult() {
-        return alertResult;
+    public String getStatus() {
+        return status;
     }
 }

@@ -13,6 +13,6 @@ public class StreamStateLogger {
 
     @ApplicationModuleListener
     void on(StreamDataStatus event)  {
-        log.info(event.getAlertResult());
+        log.info(event.getStatus());
     }
 }

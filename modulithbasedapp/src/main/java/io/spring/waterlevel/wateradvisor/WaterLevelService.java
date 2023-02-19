@@ -34,8 +34,7 @@ public class WaterLevelService {
     }
 
     @Transactional
-    public String sendAlertForStream(String sensorId) {
-        String result = streamDataService.getStatusForSensor(sensorId);
+    public String sendAlertForStream(String sensorId, String result) {
         events.publishEvent(new AlertStatus(sensorId, result));
         return result;
     }

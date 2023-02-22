@@ -11,17 +11,4 @@ public class WaterLevelScheduler {
     private static final Log log = LogFactory.getLog(WaterLevelService.class);
     private static final String SENSOR_IDS = "02311500,02323566,02312700";
 
-    private WaterLevelService waterLevelService;
-
-    public WaterLevelScheduler(WaterLevelService waterLevelService) {
-        this.waterLevelService = waterLevelService;
-    }
-
-   @Scheduled(fixedRate = 15000)
-    public void handleSensorEvent() {
-        log.info("Requesting Sensor Data for configured Sensors");
-        String result = waterLevelService.getStatusForStreamSensor(SENSOR_IDS);
-        waterLevelService.sendAlertForStream(SENSOR_IDS, result);
-        waterLevelService.newDataNotification(new StreamDataStatus(SENSOR_IDS, result));
-    }
 }

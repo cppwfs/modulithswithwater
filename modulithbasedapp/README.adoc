@@ -1,0 +1,83 @@
+# Description
+
+The purpose of this project is demonstrate how to setup a monolith app that utilizes modules to separate the logical features required by the user into components that are maintainable.
+
+At launch time the application will begin a scheduler that will retrieve the sensor data for the streams enumerated below log the information to the console, store the data to a datastore, then send out a text alert.
+
+A user can request the information with the follow get requests:
+
+If you wish to receive text alerts set the following properties:
+```
+export io.spring.smsKey=<Your sms key>
+export io.spring.phoneNUmber<the destination phone number>
+```
+
+
+## How to Build the app
+```bash
+mvn clean package
+```
+
+## Running the Application
+```
+export spring_sql_init_mode=always
+java -jar target/waterlevel-0.0.1-SNAPSHOT.jar
+```
+
+
+
+## Underlying structure
+
+The project has the following module structure:
+
+```
+# Streamdata
+> Logical name: streamdata
+> Base package: io.spring.waterlevel.streamdata
+> Spring beans:
+  + ….StreamDataService
+  + ….usgsstream.USGSStreamData
+
+# Wateradvisor
+> Logical name: wateradvisor
+> Base package: io.spring.waterlevel.wateradvisor
+> Spring beans:
+  + ….WaterLevelScheduler
+  + ….WaterLevelService
+
+# Storestreamdata
+> Logical name: storestreamdata
+> Base package: io.spring.waterlevel.storestreamdata
+> Spring beans:
+  + ….StreamStateRecorder
+
+# Logdata
+> Logical name: logdata
+> Base package: io.spring.waterlevel.logdata
+> Spring beans:
+  + ….StreamStateLogger
+
+# Alerts
+> Logical name: alerts
+> Base package: io.spring.waterlevel.alerts
+> Spring beans:
+  + ….AlertProperties
+  + ….AlertService
+
+```
+We have 4 services that are available to our users:
+
+*  `StreamDataService` that handles requests to retrieve data from the USGS and return to the user the status of the state of the bodies of water for the sensors requested.
+*  `StreamStateRecorder` that stores the status of the specified bodies based on sensorid.
+*  `AlertService` Notifies users via text or other means about the status of streams based on sensorid.
+*  `WaterLevelService` exposes the various stream operations offered by the modules to the controller and scheduler.
+
+The application allows users to retrieve information via a restful interface that utilizes the services in the stream data package to retrieve data from the USGS and then synthesizes a status for the body of water.
+
+The scheduler also uses the StreamDataService to retrieve information and status for bodies of water but also sends events to other services to store the status of the body of water and send out alerts to users about those bodies of wster.
+
+## Module failures to play with during demo
+
+* Add Autowire instead of constructor args will cause a module failure (bad practice)
+* Attempt to access USGSStreamData outside the module for example try to access it in the controller (bad practice)
+

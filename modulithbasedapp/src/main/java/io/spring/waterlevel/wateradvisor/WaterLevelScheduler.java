@@ -22,6 +22,6 @@ public class WaterLevelScheduler {
         log.info("Requesting Sensor Data for configured Sensors");
         String result = waterLevelService.getStatusForStreamSensor(SENSOR_IDS);
         waterLevelService.sendAlertForStream(SENSOR_IDS, result);
-        waterLevelService.newDataNotification(new StreamDataStatus(SENSOR_IDS, result));
+        waterLevelService.sendDataNotification(SENSOR_IDS, result);
     }
 }

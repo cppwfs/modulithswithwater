@@ -40,8 +40,7 @@ public class WaterLevelService {
     }
 
     @Transactional
-    public void newDataNotification(StreamDataStatus status) {
-        events.publishEvent(status);
-
+    public void sendDataNotification(String sensorId, String result) {
+        events.publishEvent(new StreamDataStatus(sensorId, result));
     }
 }

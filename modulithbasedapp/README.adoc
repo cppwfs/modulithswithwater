@@ -1,7 +1,7 @@
 # Description
 
 The purpose of this project is demonstrate how to setup a monolith app that utilizes modules to separate the logical features required by the user into components that are maintainable.
-asdfadsf
+
 At launch time the application will begin a scheduler that will retrieve the sensor data for the streams enumerated below log the information to the console, store the data to a datastore, then send out a text alert.
 
 A user can request the information with the follow get requests:

@@ -9,7 +9,7 @@ A user can request the information with the follow get requests:
 If you wish to receive text alerts set the following properties:
 ```
 export io.spring.smsKey=<Your sms key>
-export io.spring.phoneNUmber<the destination phone number>
+export io.spring.phoneNumber<the destination phone number>
 ```
 
 

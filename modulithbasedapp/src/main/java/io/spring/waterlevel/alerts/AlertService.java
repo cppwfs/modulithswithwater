@@ -16,7 +16,6 @@ import java.nio.charset.StandardCharsets;
 @EnableConfigurationProperties(AlertProperties.class)
 public class AlertService {
 
-
     private static final Log log = LogFactory.getLog(AlertService.class);
 
     AlertProperties alertProperties;

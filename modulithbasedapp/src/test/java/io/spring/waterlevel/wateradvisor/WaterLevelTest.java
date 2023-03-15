@@ -1,6 +1,5 @@
 package io.spring.waterlevel.wateradvisor;
 
-import io.spring.waterlevel.streamdata.StreamDataService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.modulith.test.ApplicationModuleTest;

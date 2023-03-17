@@ -59,7 +59,7 @@ The project has the following module structure:
 
 # Alerts
 > Logical name: alerts
-> Base package: io.spring.waterlevel.alerts
+> Base package: io.spring.waterlevel.kayaker
 > Spring beans:
   + ….AlertProperties
   + ….AlertService

@@ -1,4 +1,4 @@
-package io.spring.waterlevel.alerts;
+package io.spring.waterlevel.kayaker;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

@@ -1,4 +1,4 @@
-package io.spring.waterlevel.storestreamdata;
+package io.spring.waterlevel.research;
 
 import io.spring.waterlevel.wateradvisor.StreamDataStatus;
 import org.apache.commons.logging.Log;
@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 import javax.sql.DataSource;
 
 @Service
-public class StreamStateRecorder {
+public class ResearchService {
 
-    private static final Log log = LogFactory.getLog(StreamStateRecorder.class);
+    private static final Log log = LogFactory.getLog(ResearchService.class);
 
     private DataSource dataSource;
 
-    public  StreamStateRecorder(DataSource dataSource) {
+    public ResearchService(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 

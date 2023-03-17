@@ -1,4 +1,4 @@
-package io.spring.waterlevel.streamdata.usgsstream;
+package io.spring.waterlevel.usgs.usgsstream;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;

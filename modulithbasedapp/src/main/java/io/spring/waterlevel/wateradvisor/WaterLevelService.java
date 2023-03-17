@@ -1,7 +1,7 @@
 package io.spring.waterlevel.wateradvisor;
 
 
-import io.spring.waterlevel.streamdata.StreamDataService;
+import io.spring.waterlevel.usgs.UsgsService;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -12,14 +12,14 @@ import org.springframework.transaction.annotation.Transactional;
 @Service
 public class WaterLevelService {
 
-    public WaterLevelService(ApplicationEventPublisher events, StreamDataService streamDataService) {
+    public WaterLevelService(ApplicationEventPublisher events, UsgsService usgsService) {
         this.events = events;
-        this.streamDataService = streamDataService;
+        this.usgsService = usgsService;
     }
 
     private final ApplicationEventPublisher events;
 
-    private final StreamDataService streamDataService;
+    private final UsgsService usgsService;
 
 
     /**
@@ -29,7 +29,7 @@ public class WaterLevelService {
      */
     @Transactional
     public String getStatusForStreamSensor(String sensorId) {
-        String result = streamDataService.getStatusForSensor(sensorId);
+        String result = usgsService.getStatusForSensor(sensorId);
         return result;
     }
 

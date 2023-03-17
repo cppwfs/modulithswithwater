@@ -1,4 +1,4 @@
-package io.spring.waterlevel.alerts;
+package io.spring.waterlevel.kayaker;
 
 
 import io.spring.waterlevel.wateradvisor.AlertStatus;
@@ -14,12 +14,12 @@ import java.nio.charset.StandardCharsets;
 
 @Service
 @EnableConfigurationProperties(AlertProperties.class)
-public class AlertService {
+public class KayakerService {
 
-    private static final Log log = LogFactory.getLog(AlertService.class);
+    private static final Log log = LogFactory.getLog(KayakerService.class);
 
     AlertProperties alertProperties;
-    public AlertService(AlertProperties alertProperties) {
+    public KayakerService(AlertProperties alertProperties) {
         this.alertProperties = alertProperties;
     }
 

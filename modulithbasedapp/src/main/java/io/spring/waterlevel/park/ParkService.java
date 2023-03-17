@@ -1,4 +1,4 @@
-package io.spring.waterlevel.logdata;
+package io.spring.waterlevel.park;
 
 import io.spring.waterlevel.wateradvisor.StreamDataStatus;
 import org.apache.commons.logging.Log;
@@ -7,9 +7,9 @@ import org.springframework.modulith.ApplicationModuleListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class StreamStateLogger {
+public class ParkService {
 
-    private static final Log log = LogFactory.getLog(StreamStateLogger.class);
+    private static final Log log = LogFactory.getLog(ParkService.class);
 
     @ApplicationModuleListener
     void on(StreamDataStatus event)  {

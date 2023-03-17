@@ -1,4 +1,4 @@
-package io.spring.waterlevel.logdata;
+package io.spring.waterlevel.park;
 
 import io.spring.waterlevel.wateradvisor.StreamDataStatus;
 import org.junit.jupiter.api.Test;
@@ -12,12 +12,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @ExtendWith(OutputCaptureExtension.class)
 @ApplicationModuleTest
-public class StreamStateLoggerTests {
+public class ParkServiceTests {
 
     private  static final String DEFAULT_STATUS = "SOME SENSOR SOME WHERE";
 
     @Autowired
-    private StreamStateLogger logger;
+    private ParkService logger;
 
     @Test
     public void testLogger(CapturedOutput output) {

@@ -1,6 +1,6 @@
-package io.spring.waterlevel.streamdata;
+package io.spring.waterlevel.usgs;
 
-import io.spring.waterlevel.streamdata.usgsstream.USGSStreamData;
+import io.spring.waterlevel.usgs.usgsstream.USGSStreamData;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -10,7 +10,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
-public class StreamDataService {
+public class UsgsService {
 
     public String getStatusForSensor(String sensorId) {
         ZoneId zoneId = ZoneId.of("America/New_York");

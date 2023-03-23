@@ -6,7 +6,7 @@ import org.springframework.modulith.test.ApplicationModuleTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ApplicationModuleTest(mode= ApplicationModuleTest.BootstrapMode.DIRECT_DEPENDENCIES)
+@ApplicationModuleTest(mode = ApplicationModuleTest.BootstrapMode.DIRECT_DEPENDENCIES)
 public class WaterLevelTest {
 
     @Autowired

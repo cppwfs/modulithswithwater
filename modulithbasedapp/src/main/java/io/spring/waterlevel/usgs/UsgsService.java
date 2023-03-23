@@ -12,14 +12,14 @@ import java.util.stream.Collectors;
 @Service
 public class UsgsService {
 
-    public String getStatusForSensor(String sensorId) {
+    public String getStatusForSensor(String sensorIds) {
         ZoneId zoneId = ZoneId.of("America/New_York");
         LocalDateTime endTime = LocalDateTime.now(zoneId);
         LocalDateTime startTime = endTime.minusHours(5);
         RestTemplate template = new RestTemplate();
-        String result = "Error Obtaining results for " + sensorId;
+        String result = "Error Obtaining results for " + sensorIds;
         try {
-            result = template.getForObject("https://waterservices.usgs.gov/nwis/iv/?sites=" + sensorId +
+            result = template.getForObject("https://waterservices.usgs.gov/nwis/iv/?sites=" + sensorIds +
                     "&parameterCd=00065&startDT=" + startTime + "&endDT=" +
                     endTime + "&siteStatus=all&format=rdb", String.class);
 

@@ -24,25 +24,25 @@ public class WaterLevelService {
 
     /**
      * Retrieves information about the body of water for the sensor specified along with it's alert status.
-     * @param sensorId
+     * @param sensorIds
      * @return
      */
     @Transactional
-    public String getStatusForStreamSensor(String sensorId) {
-        String result = usgsService.getStatusForSensor(sensorId);
+    public String getStatusForStreamSensor(String sensorIds) {
+        String result = usgsService.getStatusForSensor(sensorIds);
         return result;
     }
 
     @Transactional
-    public void sendAlertForStream(String sensorId, String result) {
+    public void sendAlertForStream(String sensorIds, String result) {
         if(result.indexOf('\u2705') > -1) {
-            events.publishEvent(new AlertStatus(sensorId, result));
+            events.publishEvent(new AlertStatus(sensorIds, result));
         }
     }
 
     @Transactional
-    public void sendDataNotification(String sensorId, String result) {
-        events.publishEvent(new StreamDataStatus(sensorId, result));
+    public void sendDataNotification(String sensorIds, String result) {
+        events.publishEvent(new StreamDataStatus(sensorIds, result));
 
     }
 }

@@ -19,6 +19,9 @@ public class UsgsService {
         RestTemplate template = new RestTemplate();
         String result = "Error Obtaining results for " + sensorIds;
         try {
+            System.out.println("https://waterservices.usgs.gov/nwis/iv/?sites=" + sensorIds +
+                    "&parameterCd=00065&startDT=" + startTime + "&endDT=" +
+                    endTime + "&siteStatus=all&format=rdb");
             result = template.getForObject("https://waterservices.usgs.gov/nwis/iv/?sites=" + sensorIds +
                     "&parameterCd=00065&startDT=" + startTime + "&endDT=" +
                     endTime + "&siteStatus=all&format=rdb", String.class);

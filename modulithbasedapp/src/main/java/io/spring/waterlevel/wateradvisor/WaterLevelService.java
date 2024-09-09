@@ -35,7 +35,7 @@ public class WaterLevelService {
 
     @Transactional
     public void sendAlertForStream(String sensorIds, String result) {
-        if(result.indexOf('\u2705') > -1) {
+        if(result.indexOf('✅') > -1) {
             events.publishEvent(new AlertStatus(sensorIds, result));
         }
     }

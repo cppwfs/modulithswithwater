@@ -10,19 +10,19 @@ import org.springframework.modulith.test.ApplicationModuleTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-@ExtendWith(OutputCaptureExtension.class)
 @ApplicationModuleTest
+@ExtendWith(OutputCaptureExtension.class)
 public class ParkServiceTests {
 
     private  static final String DEFAULT_STATUS = "SOME SENSOR SOME WHERE";
 
     @Autowired
-    private ParkService logger;
+    private ParkService parkService;
 
     @Test
     public void testLogger(CapturedOutput output) {
-        StreamDataStatus status = new StreamDataStatus("123", "SOME SENSOR SOME WHERE");
-        logger.on(status);
-        assertThat(output.getOut()).contains(DEFAULT_STATUS);
+        StreamDataStatus status = new StreamDataStatus("123", DEFAULT_STATUS);
+        parkService.on(status);
+        assertThat(output).contains(DEFAULT_STATUS);
     }
 }

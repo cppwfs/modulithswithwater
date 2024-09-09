@@ -5,8 +5,8 @@ import io.spring.waterlevel.wateradvisor.AlertStatus;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.modulith.ApplicationModuleListener;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.event.TransactionalEventListener;
 import org.springframework.web.client.RestTemplate;
 
 import java.net.URLEncoder;
@@ -23,7 +23,7 @@ public class KayakerService {
         this.alertProperties = alertProperties;
     }
 
-    @ApplicationModuleListener
+    @TransactionalEventListener
     void on(AlertStatus event) {
         sendAlert(event);
     }

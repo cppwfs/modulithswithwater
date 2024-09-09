@@ -4,8 +4,8 @@ import io.spring.waterlevel.wateradvisor.StreamDataStatus;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.modulith.events.ApplicationModuleListener;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.event.TransactionalEventListener;
 
 import javax.sql.DataSource;
 
@@ -20,7 +20,7 @@ public class ResearchService {
         this.dataSource = dataSource;
     }
 
-    @TransactionalEventListener
+    @ApplicationModuleListener
     void on(StreamDataStatus event) throws InterruptedException {
 
         var sensorId = event.getSensorId();
